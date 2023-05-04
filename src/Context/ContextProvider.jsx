@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import { createContext } from "react";
 import app from "../Firebase/firebase.config";
@@ -14,11 +15,17 @@ import {
 const auth = getAuth(app);
 export const AuthProvider = createContext()
 
+// eslint-disable-next-line react/prop-types
 const ContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [load, setLoad] = useState(true);
 
   const logInWithGoogle = (Provider) => {
+    setLoad(true);
+    return signInWithPopup(auth, Provider);
+  };
+
+  const logInWithGithub = (Provider) => {
     setLoad(true);
     return signInWithPopup(auth, Provider);
   };
@@ -56,6 +63,7 @@ const ContextProvider = ({ children }) => {
   const Info = {
     user,
     load,
+    logInWithGithub,
     logInWithGoogle,
     signUp,
     signIn,

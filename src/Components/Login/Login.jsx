@@ -1,15 +1,40 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthProvider } from "../../Context/ContextProvider";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
 
 const Login = () => {
 
-  const { signIn } = useContext()
+  const { signIn, logInWithGoogle, logInWithGithub } = useContext(AuthProvider)
     const [error, setError] = useState('');
+    const googleProvider = new GoogleAuthProvider()
+    const githubProvider = new GithubAuthProvider();
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
     // useTitle('LogIn');
+
+    const googleHandler = ()=> {
+      logInWithGoogle(googleProvider)
+      .then(result => {
+        const user = result.user;
+        console.log(user)
+        setError('');
+      })
+      .catch(error => console.log(error));
+}
+
+
+    const githubHandler = ()=> {
+      logInWithGithub(githubProvider)
+      .then(result => {
+        const user = result.user;
+        console.log(user)
+        setError('');
+      })
+      .catch(error => console.log(error));
+}
 
     const signInHandler = event => {
           event.preventDefault();
@@ -93,10 +118,10 @@ const Login = () => {
                 <button className="btn btn-outline text-white mb-8">
                   Login
                 </button>
-                <button className="btn btn-outline text-white mb-4">
+                <button type="submit" onClick={googleHandler} className="btn btn-outline text-white mb-4">
                   Continue With Google
                 </button>
-                <button className="btn btn-outline text-white mb-4">
+                <button type="submit" onClick={githubHandler} className="btn btn-outline text-white mb-4">
                   Continue With Github
                 </button>
               </div>

@@ -26,7 +26,7 @@ const Banner = () => {
               <span className="font-tine text-black">-Dine</span> is the
               perfect destination for all your dining needs.
             </p>
-            <button className="btn btn-outline">Get Started</button>
+            <button className="btn btn-outline text-white">Get Started</button>
           </div>
         </div>
       </div>
