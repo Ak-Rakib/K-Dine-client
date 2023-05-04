@@ -5,6 +5,7 @@ import Home from "../Components/Home/Home";
 import Login from "../Components/Login/Login";
 import Blog from "../Components/Blog/Blog";
 import Register from "../Components/Register/Register";
+import Chef from "../Components/Home/Chef/Chef";
 
 
 
@@ -16,7 +17,8 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => fetch('http://localhost:5000/chefs')
             },
             {
                 path: '/blog',
@@ -29,7 +31,7 @@ export const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
-            }
+            },
         ]
     }
 ]);
