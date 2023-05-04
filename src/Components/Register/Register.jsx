@@ -7,11 +7,11 @@ const Register = () => {
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Please Login!</h1>
+            <h1 className="text-5xl font-bold">
+              Welcome to our registration page!
+            </h1>
             <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+              Please fill out the form below to create your account:
             </p>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-red-600">
@@ -25,6 +25,14 @@ const Register = () => {
                   placeholder="email"
                   className="input input-bordered"
                 />
+                <label className="label">
+                  <p
+                    href="#"
+                    className="label-text-alt text-white"
+                  >
+                    We'll never share your email with anyone else.
+                  </p>
+                </label>
               </div>
               <div className="form-control">
                 <label className="label">
@@ -45,8 +53,7 @@ const Register = () => {
                 </label>
               </div>
               <p className="text-white">
-              Have an account?  please do{" "}
-                <Link to="/login">LogIn</Link>{" "}
+                Have an account? please do <Link to="/login">LogIn</Link>{" "}
               </p>
               <br />
               <br />
