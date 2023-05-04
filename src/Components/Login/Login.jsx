@@ -3,60 +3,56 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthProvider } from "../../Context/ContextProvider";
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
-
 const Login = () => {
+  const { signIn, logInWithGoogle, logInWithGithub } = useContext(AuthProvider);
+  const [error, setError] = useState("");
+  const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  // useTitle('LogIn');
 
-  const { signIn, logInWithGoogle, logInWithGithub } = useContext(AuthProvider)
-    const [error, setError] = useState('');
-    const googleProvider = new GoogleAuthProvider()
-    const githubProvider = new GithubAuthProvider();
-    const navigate = useNavigate();
-    const location = useLocation();
-    const from = location.state?.from?.pathname || '/';
-    // useTitle('LogIn');
-
-    const googleHandler = ()=> {
-      logInWithGoogle(googleProvider)
-      .then(result => {
+  const googleHandler = () => {
+    logInWithGoogle(googleProvider)
+      .then((result) => {
         const user = result.user;
-        console.log(user)
-        setError('');
+        console.log(user);
+        setError("");
       })
-      .catch(error => console.log(error));
-}
+      .catch((error) => console.log(error));
+  };
 
-
-    const githubHandler = ()=> {
-      logInWithGithub(githubProvider)
-      .then(result => {
+  const githubHandler = () => {
+    logInWithGithub(githubProvider)
+      .then((result) => {
         const user = result.user;
-        console.log(user)
-        setError('');
+        console.log(user);
+        setError("");
       })
-      .catch(error => console.log(error));
-}
+      .catch((error) => console.log(error));
+  };
 
-    const signInHandler = event => {
-          event.preventDefault();
-          const form = event.target;
-          const email = form.email.value;
-          const password = form.password.value;
-          console.log(email, password);
+  const signInHandler = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
 
-          signIn(email, password)
-          .then(result => {
-            const user = result.user;
-            console.log(user);
-            navigate(from, {replace: true});
-            setError('')
-            form.reset();
-          })
-          .catch(error => {
-            console.log(error)
-            setError(error.message);
-          });
-    }
-
+    signIn(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate(from, { replace: true });
+        setError("");
+        form.reset();
+      })
+      .catch((error) => {
+        console.log(error);
+        setError(error.message);
+      });
+  };
 
   return (
     <div>
@@ -81,10 +77,7 @@ const Login = () => {
                   className="input input-bordered"
                 />
                 <label className="label">
-                  <p
-                    href="#"
-                    className="label-text-alt  text-white"
-                  >
+                  <p href="#" className="label-text-alt  text-white">
                     We'll never share your email with anyone else.
                   </p>
                 </label>
@@ -100,12 +93,11 @@ const Login = () => {
                   className="input input-bordered"
                 />
                 <label className="label">
-                  <p
-                    href="#"
-                    className="label-text-alt link link-hover text-white"
-                  >
-                    {error}
-                  </p>
+                  {error.providerId ? null : (
+                    <p href="#" className="label-text-alt link link-hover">
+                      {error}
+                    </p>
+                  )}
                 </label>
               </div>
               <p className="text-white">
@@ -118,10 +110,18 @@ const Login = () => {
                 <button className="btn btn-outline text-white mb-8">
                   Login
                 </button>
-                <button type="submit" onClick={googleHandler} className="btn btn-outline text-white mb-4">
+                <button
+                  type="submit"
+                  onClick={googleHandler}
+                  className="btn btn-outline text-white mb-4"
+                >
                   Continue With Google
                 </button>
-                <button type="submit" onClick={githubHandler} className="btn btn-outline text-white mb-4">
+                <button
+                  type="submit"
+                  onClick={githubHandler}
+                  className="btn btn-outline text-white mb-4"
+                >
                   Continue With Github
                 </button>
               </div>
