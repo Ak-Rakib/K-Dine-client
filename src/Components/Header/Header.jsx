@@ -1,7 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthProvider } from "../../Context/ContextProvider";
+import "./Header.css";
 
 const Header = () => {
   const { logOut, user } = useContext(AuthProvider);
@@ -31,12 +32,20 @@ const Header = () => {
               className="input input-bordered"
             />
           </div> */}
-          <Link to="/" className="btn btn-outline">
+          <div className="w-full bg-black text-white text-xl uppercase">
+            <NavLink to="/" className="border w-full h-full px-4 centered">
+              Home
+            </NavLink>
+            <NavLink to="/blog" className="border w-full h-full px-4 centered">
+              blog
+            </NavLink>
+          </div>
+          {/* <Link to="/" className="btn btn-outline">
             Home
           </Link>
           <Link to="/blog" className="btn btn-outline">
             Blog
-          </Link>
+          </Link> */}
           <div>
             {user?.uid ? (
               <div className="dropdown dropdown-end">
@@ -55,9 +64,11 @@ const Header = () => {
                 </ul>
               </div>
             ) : (
-              <Link to="/login" className="btn btn-outline">
+              <div className="w-full bg-black text-white text-xl uppercase">
+                <NavLink to="/login" className="border w-full h-full px-4 centered">
                 Login
-              </Link>
+              </NavLink>
+              </div>
             )}
           </div>
         </div>
