@@ -11,11 +11,11 @@ const CustomerReview = ({ user }) => {
       <div className="bg-white shadow-lg rounded-lg overflow-hidden mb-5">
         <div className="px-6 py-4">
           <div className="flex items-center">
-            <img
-              className="w-10 h-10 rounded-full mr-4"
-              src={photo}
-              alt={name}
-            />
+            <div className="avatar online">
+              <div className="w-24 rounded-full">
+                <img src={photo} />
+              </div>
+            </div>
             <div className="text-sm">
               <p className="text-gray-900 leading-none font-bold">{name}</p>
               {/* <p className="text-gray-600">{rating} stars</p> */}

@@ -5,6 +5,7 @@ import Banner from "./Banner/Banner";
 import { useLoaderData } from "react-router-dom";
 import Chef from "./Chef/Chef";
 import CustomerReview from "./CustomerReview/CustomerReview";
+import Progress from "./Progress/Progress";
 
 const Home = () => {
   const allChefs = useLoaderData();
@@ -71,6 +72,23 @@ const Home = () => {
           <CustomerReview key={user.id} user={user}></CustomerReview>
         ))}
       </div>
+
+      <div>
+      <h1 className="mb-2 mt-10 text-center">
+          Our{" "}
+          <span className="font-bold text-red-600 text-2xl border-b-2">
+            Customer Rating
+          </span>
+        </h1>
+        <p className="text-center text-gray-400 mb-8">
+          Chefs are skilled culinary professionals who create and prepare
+          delicious and visually appealing dishes for their patrons. They are
+          responsible for designing menus, sourcing ingredients, cooking meals,
+          and ensuring that their dishes meet high standards of quality and
+          taste.{" "}
+        </p>
+      </div>
+      <Progress></Progress>
     </div>
   );
 };
