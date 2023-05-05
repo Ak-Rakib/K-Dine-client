@@ -2,6 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { FaWaveSquare, FaReceipt, FaHeart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 const Chef = ({ chefs }) => {
@@ -28,7 +29,7 @@ const Chef = ({ chefs }) => {
             <p>{likes}</p>
           </div>
           <div className="card-actions justify-end">
-            <button className="btn btn-outline">View Recipes</button>
+            <Link to={`/recipes/${id}`} className="btn btn-outline">View Recipes</Link>
           </div>
         </div>
       </div>
