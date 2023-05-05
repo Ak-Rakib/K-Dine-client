@@ -1,12 +1,21 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthProvider } from "../../Context/ContextProvider";
-import "./Header.css";
 
 const Header = () => {
   const { logOut, user } = useContext(AuthProvider);
-  // console.log(user)
+  const [showName, setShowName] = useState(false);
+  console.log(showName);
+
+  function handleMouseEnter() {
+    setShowName(true);
+  }
+
+  function handleMouseLeave() {
+    setShowName(false);
+  }
+
   const logOutHandler = () => {
     logOut()
       .then(() => {})
@@ -25,13 +34,6 @@ const Header = () => {
           </a>
         </div>
         <div className="flex-none gap-2">
-          {/* <div className="form-control">
-            <input
-              type="text"
-              placeholder="Search"
-              className="input input-bordered"
-            />
-          </div> */}
           <div className="w-full bg-black text-white text-xl uppercase">
             <NavLink to="/" className="border w-full h-full px-4 centered">
               Home
@@ -40,18 +42,20 @@ const Header = () => {
               blog
             </NavLink>
           </div>
-          {/* <Link to="/" className="btn btn-outline">
-            Home
-          </Link>
-          <Link to="/blog" className="btn btn-outline">
-            Blog
-          </Link> */}
           <div>
             {user?.uid ? (
               <div className="dropdown dropdown-end">
-                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <label
+                  tabIndex={0}
+                  className="btn btn-ghost btn-circle avatar"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
                   <div className="w-10 rounded-full">
                     <img src={user?.photoURL} />
+                    <span style={{ display: showName ? "inline-block" : "none" }}>
+                      {user?.displayName}
+                    </span>
                   </div>
                 </label>
                 <ul
@@ -65,9 +69,12 @@ const Header = () => {
               </div>
             ) : (
               <div className="w-full bg-black text-white text-xl uppercase">
-                <NavLink to="/login" className="border w-full h-full px-4 centered">
-                Login
-              </NavLink>
+                <NavLink
+                  to="/login"
+                  className="border w-full h-full px-4 centered"
+                >
+                  Login
+                </NavLink>
               </div>
             )}
           </div>
