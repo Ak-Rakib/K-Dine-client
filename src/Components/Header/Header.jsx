@@ -2,6 +2,7 @@
 import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthProvider } from "../../Context/ContextProvider";
+import './Header.css'
 
 const Header = () => {
   const { logOut, user } = useContext(AuthProvider);
@@ -34,11 +35,11 @@ const Header = () => {
           </a>
         </div>
         <div className="flex-none gap-2">
-          <div className="w-full bg-black text-white text-xl uppercase">
-            <NavLink to="/" className="border w-full h-full px-4 centered">
+          <div>
+            <NavLink to="/" className="border w-full h-full px-4 py-2 centered uppercase">
               Home
             </NavLink>
-            <NavLink to="/blog" className="border w-full h-full px-4 centered">
+            <NavLink to="/blog" className="border w-full h-full px-4 py-2 centered uppercase">
               blog
             </NavLink>
           </div>
@@ -68,10 +69,10 @@ const Header = () => {
                 </ul>
               </div>
             ) : (
-              <div className="w-full bg-black text-white text-xl uppercase">
+              <div>
                 <NavLink
                   to="/login"
-                  className="border w-full h-full px-4 centered"
+                  className="border w-full h-full px-4 py-2 centered uppercase"
                 >
                   Login
                 </NavLink>

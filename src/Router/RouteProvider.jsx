@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/chefs'),
+                loader: () => fetch('https://k-dine-server-ak-rakib.vercel.app/chefs'),
             },
             {
                 path: '/blog',
@@ -37,7 +37,7 @@ export const router = createBrowserRouter([
             {
                 path: '/recipes/:id',
                 element: <PrivateRoute><ChefRecipes></ChefRecipes></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
+                loader: ({params}) => fetch(`https://k-dine-server-ak-rakib.vercel.app/chefs/${params.id}`)
             }
         ]
     }

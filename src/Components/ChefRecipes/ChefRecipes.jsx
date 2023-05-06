@@ -10,7 +10,7 @@ const ChefRecipes = () => {
 
   const [users, setUsers] = useState([]);
   const fetchUserData = () => {
-    fetch("http://localhost:5000/recipes")
+    fetch("https://k-dine-server-ak-rakib.vercel.app/recipes")
       .then((response) => {
         return response.json();
       })
@@ -61,7 +61,7 @@ const ChefRecipes = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
         {
             // eslint-disable-next-line react/jsx-key
             users.slice(0, 3).map(r => <Recipes
