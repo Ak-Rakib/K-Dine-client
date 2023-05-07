@@ -2,13 +2,14 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React from "react";
+import { FaStar } from 'react-icons/fa';
 
 // eslint-disable-next-line no-unused-vars
 const CustomerReview = ({ user }) => {
   const { name, text, photo } = user;
   return (
     <div>
-      <div className="bg-white shadow-lg rounded-lg overflow-hidden mb-5">
+      <div className="bg-red-600 shadow-lg rounded-lg overflow-hidden mb-5">
         <div className="px-6 py-4">
           <div className="flex items-center">
             <div className="avatar online">
@@ -16,13 +17,18 @@ const CustomerReview = ({ user }) => {
                 <img src={photo} />
               </div>
             </div>
-            <div className="text-sm">
-              <p className="text-gray-900 leading-none font-bold">{name}</p>
-              {/* <p className="text-gray-600">{rating} stars</p> */}
+            <div className="text-sm ms-2">
+              <p className="text-white leading-none font-bold text-2xl">{name}</p>
+              <div className="text-yellow-500 flex">
+                <FaStar />   
+                <FaStar />   
+                <FaStar />   
+                <FaStar />      
+              </div>
             </div>
           </div>
           <div className="mt-4">
-            <p className="text-gray-600">{text}</p>
+            <p className="text-white">{text}</p>
           </div>
         </div>
       </div>

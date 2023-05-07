@@ -26,7 +26,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <React.Fragment>
       <Banner></Banner>
 
       <div>
@@ -89,7 +89,7 @@ const Home = () => {
         </p>
       </div>
       <Progress></Progress>
-    </div>
+    </React.Fragment>
   );
 };
 
