@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 
 const Banner = () => {
@@ -7,11 +8,11 @@ const Banner = () => {
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img
             src="../../../../src/assets/cover-img.png"
-            className="max-w-sm rounded-lg shadow-2xl"
+            className="lg:max-w-sm rounded-lg shadow-2xl"
           />
           <div>
             <h1 className="text-5xl font-bold text-white">
-              Welcome To <span className="text-6xl shadow-2xl bg-white text-red-600 rounded-lg p-2">K</span>
+              Welcome To <span className="text-6xl shadow-2xl text-white rounded-lg p-2">K</span>
               <span className="font-tine text-black
               ">-Dine</span>
             </h1>
@@ -22,7 +23,7 @@ const Banner = () => {
               vegetarian option, we have you covered.
               <br />
               <br />
-              Come visit us today and discover why <span className="text-2xl shadow-2xl bg-white text-red-600 rounded-lg p-2">K</span>
+              Come visit us today and discover why <span className="text-2xl shadow-2xl text-white rounded-lg p-2">K</span>
               <span className="font-tine text-black">-Dine</span> is the
               perfect destination for all your dining needs.
             </p>

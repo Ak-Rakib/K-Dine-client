@@ -33,7 +33,7 @@ const ChefRecipes = () => {
             <div>
               <h1 className="text-5xl font-bold text-white">
                 Welcome To{" "}
-                <span className="text-6xl shadow-2xl bg-white text-red-600 rounded-lg p-2">
+                <span className="text-6xl shadow-2xl text-white rounded-lg p-2">
                   K
                 </span>
                 <span
@@ -77,7 +77,7 @@ const ChefRecipes = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-20 place-items-center">
         {
             // eslint-disable-next-line react/jsx-key
             users.slice(0, 3).map(r => <Recipes
