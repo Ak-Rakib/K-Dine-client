@@ -10,7 +10,7 @@ const Blog = () => {
   })
   return (
     <React.Fragment>
-      <div className="bg-base-200 mb-20 p-14">
+      <div className="bg-base-200 mb-20 md:p-14 lg:p-14">
         <div ref={pdf} style={{width:"100%"}}>
           <div className="bg-red-600 text-white p-5 rounded mb-10 shadow-lg transform hover:scale-110 transition duration-300">
             <h3 className="font-bold text-2xl">

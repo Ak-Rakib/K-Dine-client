@@ -3,4 +3,4 @@
 * This website have navbar and footer. navbar and footer available for all pages
 * This site have login,register page and also google and github authentication provider
 * This site have chefs details page, this page are private.
-*  
+*  https://6458fc36e6b852438c55a075--aquamarine-puppy-12e795.netlify.app/

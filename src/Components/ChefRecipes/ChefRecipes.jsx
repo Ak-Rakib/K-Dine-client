@@ -29,7 +29,7 @@ const ChefRecipes = () => {
       <div className="mb-20">
         <div className="hero min-h-screen bg-red-600">
           <div className="hero-content flex-col lg:flex-row-reverse">
-            <img src={photo} className="max-w-sm rounded-lg shadow-2xl" />
+            <img src={photo} className="lg:max-w-sm rounded-lg shadow-2xl" />
             <div>
               <h1 className="text-5xl font-bold text-white">
                 Welcome To{" "}
