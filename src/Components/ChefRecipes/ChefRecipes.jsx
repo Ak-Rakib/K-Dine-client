@@ -27,33 +27,30 @@ const ChefRecipes = () => {
   return (
     <React.Fragment>
       <div className="mb-20">
-        <div className="hero min-h-screen bg-red-600">
+        <div className="hero min-h-screen">
           <div className="hero-content flex-col lg:flex-row-reverse">
             <img src={photo} className="lg:max-w-sm rounded-lg shadow-2xl" />
             <div>
-              <h1 className="text-5xl font-bold text-white">
-                Welcome To{" "}
-                <span className="text-6xl shadow-2xl text-white rounded-lg p-2">
-                  K
-                </span>
+              <h1 className="text-5xl font-bold text-[#FC4F00]">
+                Hello I'm{" "}
                 <span
                   className="font-tine text-black
               "
                 >
-                  -Dine
+                  {name}
                 </span>
               </h1>
-              <h1 className="font-bold text-3xl">{name}</h1>
+              <h1 className="font-bold text-3xl mt-5">My Data</h1>
               <div className="flex items-center">
-                <FaWaveSquare className=" pe-1" />
+                <FaWaveSquare className=" pe-1 text-[#FC4F00]" />
                 <p className="font-bold">{experience}</p>
               </div>
               <div className="flex items-center">
-                <FaReceipt className=" pe-1" />
+                <FaReceipt className=" pe-1 text-[#FC4F00]" />
                 <p className="font-bold">{numRecipes}</p>
               </div>
               <div className="flex items-center">
-                <FaHeart className="pe-1" />
+                <FaHeart className="pe-1 text-[#FC4F00]" />
                 <p className="font-bold">{likes}</p>
               </div>
             </div>
@@ -64,7 +61,7 @@ const ChefRecipes = () => {
       <div>
       <h1 className="mb-2 mt-10 text-center">
           My{" "}
-          <span className="font-bold text-red-600 text-2xl border-b-2">
+          <span className="font-bold text-[#FC4F00] text-2xl border-b-2">
             Top Three Recipes
           </span>
         </h1>

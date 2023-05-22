@@ -12,7 +12,7 @@ const Blog = () => {
     <React.Fragment>
       <div className="bg-base-200 mb-20 md:p-14 lg:p-14">
         <div ref={pdf} style={{width:"100%"}}>
-          <div className="bg-red-600 text-white p-5 rounded mb-10 shadow-lg transform hover:scale-110 transition duration-300">
+          <div className="bg-[#FC4F00] text-white p-5 rounded mb-10 shadow-lg transform hover:scale-110 transition duration-300">
             <h3 className="font-bold text-2xl">
               Tell us the differences between uncontrolled and controlled
               components.
@@ -35,7 +35,7 @@ const Blog = () => {
               enforces specific conditions or actions.
             </p>
           </div>
-          <div className="bg-red-600 text-white p-5 rounded mb-10 shadow-lg transform hover:scale-110 transition duration-300">
+          <div className="bg-[#FC4F00] text-white p-5 rounded mb-10 shadow-lg transform hover:scale-110 transition duration-300">
             <h3 className="font-bold text-2xl">
               How to validate React props using PropTypes
             </h3>
@@ -51,7 +51,7 @@ const Blog = () => {
               your components are being used correctly.
             </p>
           </div>
-          <div className="bg-red-600 text-white p-5 rounded mb-10 shadow-lg transform hover:scale-110 transition duration-300">
+          <div className="bg-[#FC4F00] text-white p-5 rounded mb-10 shadow-lg transform hover:scale-110 transition duration-300">
             <h3 className="font-bold text-2xl">
               Tell us the difference between nodejs and express js.
             </h3>
@@ -77,7 +77,7 @@ const Blog = () => {
               web applications.
             </p>
           </div>
-          <div className="bg-red-600 text-white p-5 rounded mb-10 shadow-lg transform hover:scale-110 transition duration-300">
+          <div className="bg-[#FC4F00] text-white p-5 rounded mb-10 shadow-lg transform hover:scale-110 transition duration-300">
             <h3 className="font-bold text-2xl">
               What is a custom hook, and why will you create a custom hook?
             </h3>
@@ -96,7 +96,7 @@ const Blog = () => {
           </div>
         </div>
         <div className="text-center">
-          <button onClick={generateToPdf} className="btn btn-outline">Download PDF</button>
+          <button onClick={generateToPdf} className="btn bg-[#FC4F00] border-0">Download PDF</button>
         </div>
       </div>
     </React.Fragment>

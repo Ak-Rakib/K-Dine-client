@@ -26,7 +26,7 @@ const Recipes = ({ r }) => {
         <div className="card-body">
           <h2 className="card-title">
             {name}
-            <div className="badge badge-secondary">NEW</div>
+            <div className="badge bg-[#FC4F00] border-0">Popular</div>
           </h2>
           <h1 className="font-bold">Ingredients</h1>
           <p>
@@ -52,12 +52,12 @@ const Recipes = ({ r }) => {
               ))
             }
           </p>
-          <div className="card-actions justify-end items-center">
+          <div className="card-actions justify-between items-center">
             <div className="badge badge-outline">Rating:{rating}</div>
             <div
               onClick={favoriteHandler}
               disabled={isFavorite}
-              className="badge badge-outline btn btn-outline"
+              className="btn bg-[#FC4F00] border-0"
             >
               {isFavorite ? "Favorited!" : "Add to Favorites"}
             </div>
