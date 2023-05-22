@@ -28,7 +28,7 @@ const Header = () => {
       <div className="navbar bg-base-100">
         <div className="flex-1">
           <a className="normal-case text-xl">
-            <span className="text-red-600 text-4xl border-b-4 font-bold">
+            <span className="text-[#FC4F00] text-4xl border-b-4 font-bold">
               K
             </span>
             <span className="font-thin">-Dine</span>

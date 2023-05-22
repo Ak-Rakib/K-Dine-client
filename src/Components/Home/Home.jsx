@@ -32,7 +32,7 @@ const Home = () => {
       <div>
         <h1 className="mb-2 mt-10 text-center">
           Our{" "}
-          <span className="font-bold text-red-600 text-2xl border-b-2">
+          <span className="font-bold text-[#FC4F00] text-2xl border-b-2">
             Best Chefs
           </span>
         </h1>
@@ -55,7 +55,7 @@ const Home = () => {
       <div>
       <h1 className="mb-2 mt-10 text-center">
           Our{" "}
-          <span className="font-bold text-red-600 text-2xl border-b-2">
+          <span className="font-bold text-[#FC4F00] text-2xl border-b-2">
             Customer Review
           </span>
         </h1>
@@ -67,7 +67,7 @@ const Home = () => {
           taste.{" "}
         </p>
       </div>
-      <div className="bg-red-600 mb-20 p-4">
+      <div className=" mb-20 p-4">
         {users?.slice(0, 3).map((user) => (
           <CustomerReview key={user.id} user={user}></CustomerReview>
         ))}
@@ -76,7 +76,7 @@ const Home = () => {
       <div>
       <h1 className="mb-2 mt-10 text-center">
           Our{" "}
-          <span className="font-bold text-red-600 text-2xl border-b-2">
+          <span className="font-bold text-[#FC4F00] text-2xl border-b-2">
             Customer Rating
           </span>
         </h1>

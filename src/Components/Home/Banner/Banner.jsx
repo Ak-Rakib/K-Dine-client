@@ -22,7 +22,6 @@ const Banner = () => {
               the mood for a juicy steak, a fresh seafood dish, or a hearty
               vegetarian option, we have you covered.
             </p>
-            <button className="btn btn-outline text-white ">Get Started</button>
           </div>
         </div>
       </div>

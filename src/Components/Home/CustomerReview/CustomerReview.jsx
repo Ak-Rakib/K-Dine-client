@@ -9,7 +9,7 @@ const CustomerReview = ({ user }) => {
   const { name, text, photo } = user;
   return (
     <div>
-      <div className="bg-red-600 shadow-lg rounded-lg overflow-hidden mb-5">
+      <div className="bg-[#FC4F00] shadow-lg rounded-lg overflow-hidden mb-5">
         <div className="px-6 py-4">
           <div className="flex items-center">
             <div className="avatar online">
@@ -27,7 +27,7 @@ const CustomerReview = ({ user }) => {
               </div>
             </div>
           </div>
-          <div className="mt-4">
+          <div className="mt-4 pl-24">
             <p className="text-white">{text}</p>
           </div>
         </div>
